@@ -7,14 +7,13 @@ import time
 def get_first_youtube_embed(query):
     # Set up Chrome options for Selenium
     chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Headless mode
+    chrome_options.add_argument("--no-sandbox")  # Required for some CI environments
+    chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
+    
+    # Initialize WebDriver
+    driver = webdriver.Chrome(options=chrome_options)
     chrome_options.add_argument("--headless")  # Run in headless mode (no UI)
-    
-    # Specify the path to the ChromeDriver
-    chrome_driver_path = "chromedriver.exe"  # Update this with the path to your ChromeDriver
-    
-    # Start the browser
-    service = Service(chrome_driver_path)
-    driver = webdriver.Chrome(service=service, options=chrome_options)
     
     # Format the YouTube search URL
     search_url = f"https://www.youtube.com/results?search_query={query.replace(' ', '+')}"
