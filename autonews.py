@@ -7,6 +7,7 @@ import time
 def get_first_youtube_embed(query):
     # Set up Chrome options for Selenium
     chrome_options = Options()
+    chrome_options.binary_location = r'/usr/bin/google-chrome'
     chrome_options.add_argument("--headless")  # Headless mode
     chrome_options.add_argument("--no-sandbox")  # Required for some CI environments
     chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
