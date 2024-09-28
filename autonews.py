@@ -45,7 +45,6 @@ def get_first_youtube_embed(query):
     return "No video found."
 
 # Example usage
-query = input("Enter your search query: ")
-embed_code = get_first_youtube_embed(query)
+embed_code = get_first_youtube_embed("168減肥")
 if embed_code:
     print("Embed Code for First Video:\n", embed_code)
