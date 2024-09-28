@@ -10,10 +10,11 @@ def get_first_youtube_embed(query):
     chrome_options.add_argument("--headless")  # Headless mode
     chrome_options.add_argument("--no-sandbox")  # Required for some CI environments
     chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
+    chrome_driver_path = r'/usr/local/bin/chromedriver'
     
-    # Initialize WebDriver
-    driver = webdriver.Chrome(options=chrome_options)
-    chrome_options.add_argument("--headless")  # Run in headless mode (no UI)
+    # Start the browser
+    service = Service(chrome_driver_path)
+    driver = webdriver.Chrome(service=service, options=chrome_options)
     
     # Format the YouTube search URL
     search_url = f"https://www.youtube.com/results?search_query={query.replace(' ', '+')}"
