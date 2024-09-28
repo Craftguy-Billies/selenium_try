@@ -12,7 +12,7 @@ def get_first_youtube_embed(query):
     chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
     
     # Start the browser
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(r'/usr/local/bin/chromedriver')
     
     # Format the YouTube search URL
     search_url = f"https://www.youtube.com/results?search_query={query.replace(' ', '+')}"
