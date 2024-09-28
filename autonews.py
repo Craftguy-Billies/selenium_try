@@ -10,7 +10,7 @@ def get_first_youtube_embed(query):
     chrome_options.add_argument("--headless")  # Run in headless mode (no UI)
     
     # Specify the path to the ChromeDriver
-    chrome_driver_path = "C:\chromedriver.exe"  # Update this with the path to your ChromeDriver
+    chrome_driver_path = "chromedriver.exe"  # Update this with the path to your ChromeDriver
     
     # Start the browser
     service = Service(chrome_driver_path)
