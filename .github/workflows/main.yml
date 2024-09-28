@@ -1,9 +1,7 @@
 name: Selenium Test
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   selenium-job:
